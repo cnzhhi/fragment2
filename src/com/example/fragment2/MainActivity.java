@@ -1,6 +1,5 @@
 package com.example.fragment2;
 
-
 import com.example.fragment2.fragment.MessageFragment;
 import com.example.fragment2.fragment.HomeFragment;
 import com.example.fragment2.fragment.SettingFragment;
@@ -20,7 +19,7 @@ public class MainActivity extends FragmentActivity {
 	private LayoutInflater layoutInflater;
 
 	// 定义数组来存放Fragment界面
-	private Class fragmentArray[] = { HomeFragment.class,
+	private Class<?> fragmentArray[] = { HomeFragment.class,
 			MessageFragment.class, SettingFragment.class };
 
 	// 定义数组来存放按钮图片
@@ -35,13 +34,10 @@ public class MainActivity extends FragmentActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-
 		initView();
 	}
 
-	/**
-	 * 初始化组件
-	 */
+	// 初始化组件
 	private void initView() {
 		// 实例化布局对象
 		layoutInflater = LayoutInflater.from(this);
@@ -59,9 +55,7 @@ public class MainActivity extends FragmentActivity {
 		}
 	}
 
-	/**
-	 * 给Tab按钮设置图标和文字
-	 */
+	// 给Tab按钮设置图标和文字
 	private View getTabItemView(int index) {
 		View view = layoutInflater.inflate(R.layout.tab_item_view, null);
 		ImageView imageView = (ImageView) view.findViewById(R.id.imageview);
