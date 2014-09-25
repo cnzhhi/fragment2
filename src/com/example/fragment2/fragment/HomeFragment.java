@@ -10,29 +10,30 @@ import com.example.fragment2.R;
 
 public class HomeFragment extends Fragment {
 
-	// »º´æFragmentµÄView
-	private View rootView;
+    // ï¿½ï¿½ï¿½ï¿½Fragmentï¿½ï¿½View
+    private View rootView;
 
-	@Override
-	public void onActivityCreated(Bundle savedInstanceState) {
-		super.onActivityCreated(savedInstanceState);
-	}
+    @Override
+    public void onActivityCreated(Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+    }
 
-	@Override
-	public View onCreateView(LayoutInflater inflater, ViewGroup container,
-			Bundle savedInstanceState) {
-		if (rootView == null) {
-			rootView = inflater.inflate(R.layout.fragment_home, container,
-					false);
-		} else {
-			// »º´æµÄrootViewÐèÒªÅÐ¶ÏÊÇ·ñÒÑ¾­±»¼Ó¹ýparent
-			// Èç¹ûÓÐparentÐèÒª´ÓparentÉ¾³ý
-			ViewGroup parent = (ViewGroup) rootView.getParent();
-			if (parent != null) {
-				parent.removeView(rootView);
-			}
-		}
-		return rootView;
-	}
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+            Bundle savedInstanceState) {
+        if (rootView == null) {
+            rootView = inflater.inflate(R.layout.fragment_home, container,
+                    false);
+        }
+        else {
+            // ï¿½ï¿½ï¿½ï¿½ï¿½rootViewï¿½ï¿½Òªï¿½Ð¶ï¿½ï¿½Ç·ï¿½ï¿½Ñ¾ï¿½ï¿½ï¿½ï¿½Ó¹ï¿½parent
+            // ï¿½ï¿½ï¿½ï¿½ï¿½parentï¿½ï¿½Òªï¿½ï¿½parentÉ¾ï¿½ï¿½
+            ViewGroup parent = (ViewGroup) rootView.getParent();
+            if (parent != null) {
+                parent.removeView(rootView);
+            }
+        }
+        return rootView;
+    }
 
 }
